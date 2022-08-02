@@ -2,6 +2,8 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 export const Mapa = ({ lat, long, data }) => {
 
+
+
   return (
     <MapContainer center={[lat, long]} zoom={14.5} scrollWheelZoom={false} style={{ height: '400px', width: '75%', marginTop: '1rem', margin: 'auto' }}>
       <TileLayer
@@ -12,7 +14,7 @@ export const Mapa = ({ lat, long, data }) => {
         data.map(station => (
           <Marker key={station.name} position={[station.latitude, station.longitude]}>
             <Popup>
-              {station.name}
+              {station.name}, {station.latitude}, {station.longitude}
             </Popup>
           </Marker>
         ))
